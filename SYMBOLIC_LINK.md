@@ -1,0 +1,1 @@
+mklink /d C:\Users\hovna\mpv\mpv C:\Users\hovna\better-mpv-config\mpv_v3
