@@ -3,7 +3,6 @@ sub_end_time = nil
 
 
 function time_change(event)
-  mp.osd_message("tc")
   if event["name"]  == "time-pos" and sub_end_time ~= nil then
     time_now = mp.get_property_number("time-pos")
     if time_now > sub_end_time then
