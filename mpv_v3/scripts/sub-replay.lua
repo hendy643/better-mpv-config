@@ -1,28 +1,35 @@
-TIME_SHIFT=5
+TIME_SHIFT = 5.0
+sub_end_time = nil
+
+
+function time_change(event)
+  mp.osd_message("tc")
+  if event["name"]  == "time-pos" and sub_end_time ~= nil then
+    time_now = mp.get_property_number("time-pos")
+    if time_now > sub_end_time then
+      mp.unobserve_property("time-pos")
+      mp.set_property("sub-visibility", "no")
+      sub_end_time = nil
+      mp.unregister_event(time_change)
+    end
+  end
+end
 
 function replay_previous_seconds(flag)
-  if flag == true
-  then
-    mp.set_property("sub-visibility", "yes")
-    START = mp.get_next_timeout()
-    if START == nil then
-      START = 0
-    end
-    if hide_timer ~= nil then
-      hide_timer:kill()
-    end
-    hide_timer = mp.add_timeout(START+TIME_SHIFT, replay_finished)
-  end
   mp.commandv("seek", -TIME_SHIFT, "relative+exact")
+
+  if flag ~= true then return end
+
+  mp.set_property("sub-visibility", "yes")
+  if sub_end_time == nil then
+    sub_end_time = mp.get_property_number("time-pos")
+    mp.observe_property("time-pos")
+    mp.register_event("property-change", time_change)
+  end
 end
 
 function replay_previous_seconds_with_subtitles()
-    replay_previous_seconds(true)
-end
-
-function replay_finished()
-    mp.set_property("sub-visibility", "no")
-    hide_timer = nil
+  replay_previous_seconds(true)
 end
 
 function init()
