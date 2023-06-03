@@ -1,4 +1,4 @@
-TIME_SHIFT = 5.0
+TIME_SHIFT = 7.0
 sub_end_time = nil
 
 
