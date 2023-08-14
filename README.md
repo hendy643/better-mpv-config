@@ -1,15 +1,21 @@
 # better-mpv-config
 
-- Version: 1.1.10
-- Last Updated (AEST): 2023-05-23 11:26:27PM
-- Target Platform: Windows 11 (not tested on Apple or Linux at all)
+- Version: 1.1.25
+- Last Updated (AEST): 2023-08-13 06:38:55PM
+- Target Platform: Windows 10 (not tested on Apple or Linux at all)
 - Test PC: Old Quad Core Desktop
     - CPU: Intel(R) Core(TM) i5-4690 CPU @ 3.50GHz
     - RAM: 32.0 GB (31.9 GB usable)
     - GPU: NVidia GeForce GTX 1060 6GB (Gigabyte)
-    - OS: Windows 11 Pro 22H2 (unsupported hardware)
+    - OS: Windows 10 Pro 22H2
 
 ## What's New
+
+_Version 1.1.25 (Aug 13, 2023)_
+- Fixed all console messages and implemented stricter MPV pathing for HOME_PATH
+- Improved optional `input.conf` with quiet mode seeking and other minor changes
+- Disabled `hwdec` for the moment while MPV seems to enable it by default
+- Check new install instructions below (Configuration for MPV v3)
 
 _Version 1.1.10 (May 23, 2023)_
 - HOTFIX: Fixed upscaler shaders to only apply to videos lower than 1080p
@@ -59,7 +65,7 @@ This is an improved MPV Media Player v3 configuration file that:
 - sets the default video, audio, and subtitle language to `en,eng`
 - uses shaders to improve, upscale and downscale videos
     - CAS, FSR, KrigBilateral, SSimDownscaler and SSimSuperRes
-- has been tested on Windows 11 only (not tested on Apple or Linux)
+- has been tested on Windows 10 and 11 only (not tested on Apple or Linux)
 - adds no additional cruft...
 
 ## Requirements
@@ -76,7 +82,8 @@ This is an improved MPV Media Player v3 configuration file that:
 
 ## Configuration for MPV v3
 
-0. Download the latest release
-1. Extract the `.conf` files and `shaders` folder next to `mpv.exe`
-2. Delete `input.conf` if desired (custom keybindings)
-3. Delete or comment out the include line for `mpv_shaders.conf` if your GPU cannot handle the shaders
+0. Download the [latest release](https://github.com/hl2guide/better-mpv-config/releases)
+1. Extract the `configs` and `shaders` folders next to `mpv.exe`
+2. Extract the `mpv.conf` and `input.conf` files next to `mpv.exe`
+3. Delete `input.conf` if desired (custom keybindings)
+4. If your GPU cannot handle the shaders in `mpv.conf`, delete or comment out the include line for `configs\mpv_shaders.conf`
