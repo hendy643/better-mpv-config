@@ -1,7 +1,7 @@
 # better-mpv-config
 
-- Version: 1.1.25
-- Last Updated (AEST): 2023-08-13 06:38:55PM
+- Version: 1.2.1
+- Last Updated (AEST): 2023-09-27 12:53:18AM
 - Target Platform: Windows 10 (not tested on Apple or Linux at all)
 - Test PC: Old Quad Core Desktop
     - CPU: Intel(R) Core(TM) i5-4690 CPU @ 3.50GHz
@@ -10,6 +10,14 @@
     - OS: Windows 10 Pro 22H2
 
 ## What's New
+
+_Version 1.2.1 (Sept 27, 2023)_
+- Split shaders into two sets (big improvement to quality of GPU shaders)
+    - NVidia
+    - AMD and Intel
+- Improved `input.conf`
+    - new keys for playback speed
+    - upscaler shader mode
 
 _Version 1.1.25 (Aug 13, 2023)_
 - Fixed all console messages and implemented stricter MPV pathing for HOME_PATH
@@ -86,4 +94,5 @@ This is an improved MPV Media Player v3 configuration file that:
 1. Extract the `configs` and `shaders` folders next to `mpv.exe`
 2. Extract the `mpv.conf` and `input.conf` files next to `mpv.exe`
 3. Delete `input.conf` if desired (custom keybindings)
-4. If your GPU cannot handle the shaders in `mpv.conf`, delete or comment out the include line for `configs\mpv_shaders.conf`
+4. In the `mpv.conf` file toggle the include line for the type of GPU you use (defaults to NVidia)
+5. If your GPU cannot handle the shaders in `mpv.conf`, delete or comment out the include line for `configs\mpv_shaders.conf`
