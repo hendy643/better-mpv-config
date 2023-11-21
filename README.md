@@ -1,42 +1,24 @@
 # better-mpv-config
 
-- Version: 1.2.1
-- Last Updated (AEST): 2023-09-27 12:53:18AM
-- Target Platform: Windows 10 (not tested on Apple or Linux at all)
-- Test PC: Old Quad Core Desktop
-    - CPU: Intel(R) Core(TM) i5-4690 CPU @ 3.50GHz
-    - RAM: 32.0 GB (31.9 GB usable)
-    - GPU: NVidia GeForce GTX 1060 6GB (Gigabyte)
-    - OS: Windows 10 Pro 22H2
+- Version: 1.3
+- Last Updated (AEST): 2023-11-21 10:00:24PM
+- Target Platform: Windows 10 or later (not tested on Apple or Linux at all)
+- Test PC: New Intel i9 Desktop
+    - CPU: Intel i9-13900K @ 3GHz
+    - RAM: 64GB
+    - GPU: NVidia GeForce RTX 4070 12GB
+    - OS: Windows 11 Pro 23H2
 
 ## What's New
 
-_Version 1.2.1 (Sept 27, 2023)_
-- Split shaders into two sets (big improvement to quality of GPU shaders)
-    - NVidia
-    - AMD and Intel
-- Improved `input.conf`
-    - new keys for playback speed
-    - upscaler shader mode
+_Version 1.3 (Nov 21, 2023)_
+- Changed default player behaviour to keep it open after a video/playlist ends
+- Improved `input.conf` for easier seeking
+- Updated `mpv.conf` to default base shaders `SSimDownscaler`, `SSimSuperRes`, `KrigBilateral` to off
+    - I did this since in testing I noticed over-sharpening and ghosting
+- Added easy activation of `uosc` in `mpv_osd.conf` (default is off)
 
-_Version 1.1.25 (Aug 13, 2023)_
-- Fixed all console messages and implemented stricter MPV pathing for HOME_PATH
-- Improved optional `input.conf` with quiet mode seeking and other minor changes
-- Disabled `hwdec` for the moment while MPV seems to enable it by default
-- Check new install instructions below (Configuration for MPV v3)
-
-_Version 1.1.10 (May 23, 2023)_
-- HOTFIX: Fixed upscaler shaders to only apply to videos lower than 1080p
-
-_Version 1.1.00 (May 23, 2023)_
-- Added shaders
-    - SSimDownscaler by [igv](https://gist.github.com/igv/36508af3ffc84410fe39761d6969be10)
-    - SSimSuperRes by [igv](https://gist.github.com/igv/2364ffa6e81540f29cb7ab4c9bc05b6b)
-    - KrigBilateral by [igv](https://gist.github.com/igv/a015fc885d5c22e6891820ad89555637)
-    - Nvidia Adaptive-directional sharpening algorithm shader by [agyild](https://gist.github.com/agyild/7e8951915b2bf24526a9343d951db214)
-    - Contrast Adaptive Sharpening (CAS) by [agyild](https://gist.github.com/agyild/bbb4e58298b2f86aa24da3032a0d2ee6)
-    - FidelityFX Super Resolution (FSR) by [agyild](https://gist.github.com/agyild/82219c545228d70c5604f865ce0b0ce5)
-- Split config file into six files (organized and easier toggling)
+See [HISTORY.md](HISTORY.md) for the history of older versions.
 
 ## Important Notes
 
@@ -47,8 +29,6 @@ The defaults are:
 
 - `Arial` for the subtitle font
 - `en,eng` (English) for the audio and subtitle languages
-
-See [HISTORY.md](HISTORY.md) for the history of older versions.
 
 As of version 1.1.00 please check the other `.conf` files as well.
 
