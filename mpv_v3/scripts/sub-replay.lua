@@ -32,8 +32,8 @@ function replay_previous_seconds_with_subtitles()
 end
 
 function init()
-    mp.add_key_binding("a", "replay-previous-sentence", replay_previous_seconds)
-    mp.add_key_binding("s", "replay-previous-sentence-with-subtitles", replay_previous_seconds_with_subtitles)
+    mp.add_forced_key_binding("a", "replay-previous-sentence", replay_previous_seconds)
+    mp.add_forced_key_binding("s", "replay-previous-sentence-with-subtitles", replay_previous_seconds_with_subtitles)
 end
 
 mp.register_event("file-loaded", init)
